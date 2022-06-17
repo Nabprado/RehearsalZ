@@ -7,7 +7,7 @@ By uploading the audio tracks of your songs, you can select in one click which t
 
 ## Authors
 
-- [@nabmoskera](https://www.github.com/nabmoskera)
+- [@Nabprado](https://www.github.com/Nabprado)
 
 
 ## Feedback
