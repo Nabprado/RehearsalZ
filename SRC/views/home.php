@@ -1,13 +1,10 @@
 <div class="main_title">
-
     <h1>Rehearsalz</h1>
     <p>Lorem ipsum dolor sit amet.</p>
-
 </div>
 
 
 <div class="main_content">
-
     <article class="main_content_article">
 
         <h2>Lorem ipsum dolor sit amet.</h2>
@@ -41,5 +38,4 @@
         </p>
 
     </article>
-
 </div>

@@ -1,7 +1,5 @@
 <div class="main_title">
-
     <h1>Log in</h1>
-
 </div>
 
 

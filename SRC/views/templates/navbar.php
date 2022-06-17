@@ -18,20 +18,16 @@
 <!-- navbar list -->
     <ul class="navbar_list">
         <?php
-
         nav_item('/?page=home', 'Home');
         nav_item('/?page=about', 'About us');
-
         ?>
     </ul>
 
 <!-- burger menu -->
     <div class="navbar_burger">
-
         <button class="burger">
             <span class="burger_bar"></span>
         </button>
-        
     </div>
     
 </nav>

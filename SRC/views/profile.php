@@ -28,6 +28,7 @@
             </article>
                 
         <?php } ?>
+        
     </div>
 
 </div>

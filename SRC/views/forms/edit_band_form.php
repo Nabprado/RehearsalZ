@@ -1,4 +1,4 @@
-<form method="post" class="form edit_band_form" enctype="multipart/form-data">
+<form method="post" class="form edit_band_form">
     <fieldset class="form_fieldset">
         
         <label for="band_name">Name:</label>
