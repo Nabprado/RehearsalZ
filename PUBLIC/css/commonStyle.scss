@@ -1,0 +1,1009 @@
+// RESET*******************************************************
+* {
+    margin: 0;
+    padding: 0;
+}
+ul {
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+}
+
+// MOBILEFIRST ///////////////////////////////////////////////////////////////////////
+
+// FONTS ***************************************************************************************************************************
+@import url("https://fonts.googleapis.com/css2?family=Syncopate&display=swap"); // "Syncopate", sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap"); // "Roboto Slab", serif;
+
+// VARIABLES********************************************************
+
+$fontSize_h1: 2.5rem;
+$fontSize_h2: 1.5rem;
+$fontSize_text: 1.2rem;
+$fontFam_title: "Syncopate", sans-serif;
+$fontFam_text: "Roboto Slab", serif;
+$color_golden: rgba(221, 188, 0, 1);
+$color_white: rgba(255, 255, 255, 1);
+$color_black: rgba(0, 0, 0, 1);
+$color_red: rgb(152, 0, 0);
+
+@mixin btn {
+    margin: 1em auto;
+    padding: 0.5em 2em;
+    color: $color_golden;
+    background-image: url('/PUBLIC/assets/fake-brick.png');
+    background-color: $color_black;
+    border: 1px solid $color_golden;
+    font-family: $fontFam_title;
+    font-weight: 600;
+}
+
+// GENERALITIES******************************************************
+// GENERALITIES******************************************************
+// GENERALITIES******************************************************
+
+body {
+    background-color: $color_black;
+    font-family: "Roboto Slab", serif;
+    font-size: 1.3rem;
+
+    .header {
+        width: 100%;
+        height: 15vh;
+        background-image: url('/PUBLIC/assets/fake-brick.png');
+        background-size: contain;
+        box-shadow: 0 0.1em 0.3em rgba(221, 188, 0, 1);
+    }
+
+    .main {
+        width: 90%;
+        margin: 1em auto;
+        font-size: 1rem;
+
+        .main_content {
+            min-height: 70vh;
+        }
+    }
+    
+    .footer {
+        width: 100%;
+        height: 10vh;
+        display: flex;
+        background-image: url('/PUBLIC/assets/fake-brick.png');
+        background-size: contain;
+        box-shadow: 0 -0.1em 0.3em rgba(221, 188, 0, 1);
+    }
+}
+// end generalities............................................
+
+// NAVBAR******************************************************
+// NAVBAR******************************************************
+// NAVBAR******************************************************
+
+body {
+    .header{
+        .navbar {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .user {
+                width: 30%;
+                margin: 0 1em;
+                ul {
+                    display: flex;
+                    justify-content: space-around;
+                    a {
+                        li {
+                            text-align: center;
+                            img {
+                                width: 60%;
+                                background-color: $color_golden;
+                                border-radius: 2em;
+                                -webkit-border-radius: 2em;
+                                -moz-border-radius: 2em;
+                                -ms-border-radius: 2em;
+                                -o-border-radius: 2em;
+                                border: 2px solid $color_white;
+                            }
+                            p {
+                                font-size: 0.8rem;
+                                color: $color_white;
+                            }
+                        }
+                    }
+                }
+            }
+            .navbar_list {
+                overflow: hidden;
+                background-color: rgba(0, 0, 0, 1);
+                display: flex;
+                flex-direction: column;
+                width: 0;
+                height: fit-content;
+                position: absolute;
+                top: 0;
+                right: 0;
+                transition: all 0.5s ease-in-out;
+                box-shadow: 0 0.2em 0.3em rgba(255, 255, 255, 0.8);
+                background-image: url('/PUBLIC/assets/fake-brick.png');
+                a {
+                    display: block;
+                    letter-spacing: 0.5rem;
+                    color: rgb(255, 255, 255);
+
+                    li {
+                        width: 100%;
+                        height: 100%;
+                        padding: 1.5rem;
+                        box-shadow: 0 0.2em 0.3em rgba(255, 255, 255, 0.8);
+
+                    }
+                }
+            }
+            .navbar_burger {
+                margin-right: 1rem;
+                width: 3rem;
+                height: 3rem;
+
+                .burger {
+                display: block;
+                position: relative;
+                width: 100%;
+                height: 100%;
+                border: none;
+                background-color: transparent;
+
+                .burger_bar {
+                    display: block;
+                    width: 3rem;
+                    height: 0.4rem;
+                    background-color: $color_golden;
+                    border-radius: 1rem;
+                    -webkit-border-radius: 1rem;
+                    -moz-border-radius: 1rem;
+                    -ms-border-radius: 1rem;
+                    -o-border-radius: 1rem;
+                    transition: all 0.5s ease-in-out;
+                    -webkit-transition: all 0.5s ease-in-out;
+                    -moz-transition: all 0.5s ease-in-out;
+                    -ms-transition: all 0.5s ease-in-out;
+                    -o-transition: all 0.5s ease-in-out;
+                }
+
+                .burger_bar::before,
+                .burger_bar::after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    width: 3rem;
+                    height: 0.4rem;
+                    background-color: $color_golden;
+                    border-radius: 1rem;
+                    -webkit-border-radius: 1rem;
+                    -moz-border-radius: 1rem;
+                    -ms-border-radius: 1rem;
+                    -o-border-radius: 1rem;
+                }
+                .burger_bar::before {
+                    transform: translateY(-1rem);
+                    -webkit-transform: translateY(-1rem);
+                    -moz-transform: translateY(-1rem);
+                    -ms-transform: translateY(-1rem);
+                    -o-transform: translateY(-1rem);
+                    transition: all 0.5s ease-in-out;
+                    -webkit-transition: all 0.5s ease-in-out;
+                    -moz-transition: all 0.5s ease-in-out;
+                    -ms-transition: all 0.5s ease-in-out;
+                    -o-transition: all 0.5s ease-in-out;
+                }
+                .burger_bar::after {
+                    transform: translateY(1rem);
+                    -webkit-transform: translateY(1rem);
+                    -moz-transform: translateY(1rem);
+                    -ms-transform: translateY(1rem);
+                    -o-transform: translateY(1rem);
+                    transition: all 0.5s ease-in-out;
+                    -webkit-transition: all 0.5s ease-in-out;
+                    -moz-transition: all 0.5s ease-in-out;
+                    -ms-transition: all 0.5s ease-in-out;
+                    -o-transition: all 0.5s ease-in-out;
+                }
+            }
+            }
+            
+        }
+    }
+}
+
+
+// toggle burger (JS)
+
+body {
+    .header {
+        .show_nav {
+
+            .navbar_list {
+                width: 100%;
+                transition: all 0.5s ease-in-out;
+                -webkit-transition: all 0.5s ease-in-out;
+                -moz-transition: all 0.5s ease-in-out;
+                -ms-transition: all 0.5s ease-in-out;
+                -o-transition: all 0.5s ease-in-out;
+            }
+            .navbar_burger {
+                width: fit-content;
+
+                .burger {
+                    width: fit-content;
+                    
+                    .burger_bar {
+                        background: transparent;
+                    }
+                    .burger_bar::before {
+                        transform: rotate(45deg);
+                        -webkit-transform: rotate(45deg);
+                        -moz-transform: rotate(45deg);
+                        -ms-transform: rotate(45deg);
+                        -o-transform: rotate(45deg);
+                        transition: all 0.5s ease-in-out;
+                        -webkit-transition: all 0.5s ease-in-out;
+                        -moz-transition: all 0.5s ease-in-out;
+                        -ms-transition: all 0.5s ease-in-out;
+                        -o-transition: all 0.5s ease-in-out;
+                    }
+                    .burger_bar::after {
+                        transform: rotate(-45deg);
+                        -webkit-transform: rotate(-45deg);
+                        -moz-transform: rotate(-45deg);
+                        -ms-transform: rotate(-45deg);
+                        -o-transform: rotate(-45deg);
+                        transition: all 0.5s ease-in-out;
+                        -webkit-transition: all 0.5s ease-in-out;
+                        -moz-transition: all 0.5s ease-in-out;
+                        -ms-transition: all 0.5s ease-in-out;
+                        -o-transition: all 0.5s ease-in-out;
+                    }
+                }
+            }
+            
+
+            
+        }
+    }
+}
+// END NAVBAR............................................
+
+// MAIN**************************************************
+// MAIN**************************************************
+// MAIN**************************************************
+
+// home & about pages
+
+body {
+    .main {
+        color: $color_black;
+        font-size: $fontSize_text;
+        font-family: $fontFam_text;
+
+        .main_title {
+            width: 100%;
+            height: 20vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            h1 {
+                font-size: $fontSize_h1;
+                color: $color_golden;
+                font-family: $fontFam_title;
+                text-shadow: none;
+                animation: 5s linear 1s 1 colorChange;
+                -webkit-animation: 5s linear 1s 1 colorChange;
+                -moz-animation: 5s linear 1s 1 colorChange;
+            }
+
+            p {
+                color: $color_white;
+            }
+        }
+
+        .main_content {
+
+            .main_content_article {
+                background-color: $color_white;
+                border: none;
+                border-radius: 1rem;
+                -webkit-border-radius: 1rem;
+                -moz-border-radius: 1rem;
+                -ms-border-radius: 1rem;
+                -o-border-radius: 1rem;
+                padding: 1em;
+                margin: 2em 0;
+
+                h2 {
+                    font-family: $fontFam_title;
+                    font-size: $fontSize_h2;
+                    text-align: center;
+                    margin: 0.5em 0 1em 0;
+                }
+                p {
+                    font-family: $fontFam_text;
+                    text-align: justify;
+                }
+            }
+        }
+    }
+}
+
+// keyframes (colorChange H1)*******
+
+@keyframes colorChange {
+    0% {
+        text-shadow: 1em 1em 2em rgba(0, 0, 0, 1), 0 0 1em rgba(218, 185, 0, 0.877), 0 0 0.2em rgba(218, 185, 0, 0.877);
+        -moz-text-shadow: 1em 1em 2em rgba(0, 0, 0, 1), 0 0 1em rgba(218, 185, 0, 0.877), 0 0 0.2em rgba(218, 185, 0, 0.877);
+    }
+    40% {
+        text-shadow: 0.4em 0.4em 1.4em rgba(0, 0, 0, 1), 0 0 0.4em rgba(218, 185, 0, 0.877), 0 0 0 rgba(218, 185, 0, 0.877);
+        -moz-text-shadow: 0.4em 0.4em 1.4em rgba(0, 0, 0, 1), 0 0 0.4em rgba(218, 185, 0, 0.877), 0 0 0 rgba(218, 185, 0, 0.877);
+    }
+    70% {
+        text-shadow: 0.2em 0.2em 1em rgba(0, 0, 0, 1), 0 0 0.2em rgba(218, 185, 0, 0.877), 0 0 0 rgba(218, 185, 0, 0.877);
+        -moz-text-shadow: 0.2em 0.2em 1em rgba(0, 0, 0, 1), 0 0 0.2em rgba(218, 185, 0, 0.877), 0 0 0 rgba(218, 185, 0, 0.877);
+    }
+    100% {
+        text-shadow: 0.1em 0.1em 0.6em rgba(0, 0, 0, 1), 0 0 0 rgba(218, 185, 0, 0.877), 0 0 0 rgba(218, 185, 0, 0.877);
+        -moz-text-shadow: 0.1em 0.1em 0.6em rgba(0, 0, 0, 1), 0 0 0 rgba(218, 185, 0, 0.877), 0 0 0 rgba(218, 185, 0, 0.877);
+    }
+}
+
+// forms style
+
+body {
+    .main_content {
+        .form_div {
+            margin: 2em 0;
+            color: $color_white;
+            text-align: center;
+
+            .form {
+                font-family: $fontFam_text;
+
+                .form_fieldset {
+                    display: flex;
+                    flex-direction: column;
+                    box-shadow: 0 0.1em 0.3em rgba(255, 255, 255, 0.8);
+
+                    legend {
+                        margin: auto;
+                        color: $color_golden;
+                        font-family: $fontFam_title;
+                        background-color: $color_black;
+                        padding: 0 0.2em;
+                    }
+
+                    span {
+                        color: $color_red;
+                        font-size: 0.8rem;
+                        margin: 2em 0;
+                        font-style: italic;
+                    }
+
+                    .alert {
+                        border-radius: 1em;
+                        -webkit-border-radius: 1em;
+                        -moz-border-radius: 1em;
+                        -ms-border-radius: 1em;
+                        -o-border-radius: 1em;
+                        border: 1px dashed $color_red;
+                        width: 50%;
+                        margin: auto;
+                        padding: 2em;
+                        
+                        p {
+                            font-size: 1rem;
+                            color: $color_red;
+                            margin-bottom: 1em;
+                        }
+                        a {
+                            text-decoration: underline;
+                            color: rgb(255, 255, 255);
+                        }
+                    }
+
+                    label {
+                        font-size: 1rem;
+                        margin: 1em 0;
+                    }
+
+                    input {
+                        width: 50%;
+                        margin: auto;
+                    }
+                    select {
+                        width: 50%;
+                        margin: auto;
+                    }
+
+                    .error {
+                        opacity: 1;
+                        font-size: 0.6em;
+                        text-align: center;
+                        margin: 0.2em 0 1em 0;
+                        color: $color_red;
+                    }
+
+                    .invalid {
+                        border: 2px solid $color_red;
+                        border-radius: 0.2em;
+                        -webkit-border-radius: 0.2em;
+                        -moz-border-radius: 0.2em;
+                        -ms-border-radius: 0.2em;
+                        -o-border-radius: 0.2em;
+                    }
+
+                    .hide {
+                        opacity: 0;
+                    }
+
+                    textarea {
+                        width: 80%;
+                        margin: 1em auto;
+                    }
+                    
+                    .submit {
+                        @include btn;
+                    }
+                    .submit:disabled {
+                        opacity: 0.5;
+                    }
+                    
+                }
+            }
+        }
+    }
+}
+
+// thank_you page
+
+body {
+    .main_thank_you {
+        height: 45vh;
+        
+        .thank_you {
+            margin: auto;
+            background-color: $color_white;
+            width: fit-content;
+            padding: 0.5em;
+            text-align: center;
+            border-radius: 1em;
+            -webkit-border-radius: 1em;
+            -moz-border-radius: 1em;
+            -ms-border-radius: 1em;
+            -o-border-radius: 1em;
+            p{
+                font-size: 1rem;
+                font-style: italic;
+            }
+            
+        }
+    }
+}
+
+// profile page
+
+body {
+    .profile {
+    
+        .user_profile {
+            margin: 1em auto;
+            width: fit-content;
+            background-color: $color_golden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 1em;
+            -webkit-border-radius: 1em;
+            -moz-border-radius: 1em;
+            -ms-border-radius: 1em;
+            -o-border-radius: 1em;
+            img {
+                width: 10%;
+                border: 2px solid black;
+                padding: 0.3em;
+                margin: 0.3em;
+                border-radius: 3em;
+                -webkit-border-radius: 3em;
+                -moz-border-radius: 3em;
+                -ms-border-radius: 3em;
+                -o-border-radius: 3em;
+            }
+            p {
+                font-size: $fontSize_h2;
+                a {
+                    color: $color_white;
+                }
+            }
+        }
+
+        .user_list {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+
+            .add_band {
+                @include btn;
+                a {
+                color: $color_golden;
+                }
+            }
+            
+            .band {
+                margin: 1em auto;
+                padding: 1em;
+                border: 2px solid $color_golden;
+                border-radius: 1em;
+                -webkit-border-radius: 1em;
+                -moz-border-radius: 1em;
+                -ms-border-radius: 1em;
+                -o-border-radius: 1em;
+                width: 15em;
+                height: 10em;
+
+                .band_info{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    img {
+                        width: 5em;
+                        height: 5em;
+                        border-radius: 0.5em;
+                        -webkit-border-radius: 0.5em;
+                        -moz-border-radius: 0.5em;
+                        -ms-border-radius: 0.5em;
+                        -o-border-radius: 0.5em;
+                    }
+                    h2 {
+                        width: 100%;
+                        font-size: 1.5rem;
+                        margin-left: 1em;
+                        text-align: left;
+                        font-family: $fontFam_title;
+                        a {
+                            color: $color_golden;
+                        }
+                    }
+                    
+                }
+                .band_play {
+                    width: 100%;
+                    margin-top: 1em;
+                    display: flex;
+                    justify-content: center;
+                    a {
+                        input {
+                        @include btn;
+                        cursor: pointer;
+                    }
+                    }
+                    
+                }
+                .edit_bands {
+                    a {
+                        color: $color_red;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// settings page
+
+body {
+    .main_content {
+        .user {
+            width: 100%;
+            height: 70vh;
+            color: $color_white;
+            text-align: center;
+            margin: auto;
+            .edit_user {
+                div {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    label {
+                        margin: 1em 0.5em;
+                        color: $color_golden;
+                        font-family: $fontFam_title;
+                        font-weight: 600;
+                    }
+                    input {
+                        height: 2em;
+                    }
+                    #password {
+                        width: fit-content;
+                        //margin: auto;
+                        padding: 0.2em;
+                        background-color: $color_black;
+                        color: $color_golden;
+                    }
+                }
+                #submit {
+                    @include btn;
+                }
+            }
+            .change_password {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                display: none;
+                div {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    label {
+                        color: $color_white;
+                        font-size: 1rem;
+                        margin: 0.3em;
+                    }
+                    input {
+                        height: 1em;
+                        width: 50%;
+                    }
+                    .invalid {
+                        border: 2px solid $color_red;
+                    }
+                    .error {
+                        color: $color_red;
+                        font-size: 1rem;
+                        margin: 0.3em 0;
+                    }
+                    .hide {
+                        display: none;
+                    }
+                }
+                #save_password {
+                    @include btn;
+                }
+
+            }
+            .show {
+                display: block;
+            }
+            
+            
+        }
+    }
+}
+
+// band page
+
+body {
+    .band {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        .add_song {
+            @include btn;
+            a {
+                color: $color_golden;
+            }
+        }
+        .song {
+            width: fit-content;
+
+            h2{
+                a{
+                    color: $color_black;
+                }
+            }
+        }
+    }
+}
+
+//edit_band page
+
+body {
+    .main_content {
+        .form_div {
+            .edit_band_form {
+                .form_fieldset {
+                    img {
+                        width: 30%;
+                        margin: auto;
+                    }
+                    #file {
+                        margin: 1em auto;
+                    }
+                    .submit {
+                        @include btn;
+                    }
+                }
+            }
+
+        }
+        
+    }
+}
+
+// song page
+
+body {
+    .main_content {
+        form {
+            .audio_controller {
+                display: flex;
+                justify-content: space-around;
+                .btn {
+                    @include btn;
+                }
+            }
+            .track {
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                margin: 1em 0;
+
+                label {
+                    color: $color_golden;
+                    width: 15%;
+                }
+                input {
+                    width: 15%;
+                }
+                audio {
+                    width: 70%;
+                }
+            }
+        }
+    }
+}
+
+// add_song page
+
+.main_content {
+    .form_div {
+        .add_song_form {
+            .form_fieldset {
+                color: $color_golden;
+                #add_track {
+                    @include btn;
+                }
+                #new_track,
+                #new_track2 {
+                    display: none;
+                    div {
+                        display: flex;
+                        flex-direction: column;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// logout page
+
+body {
+    .logout {
+        margin-top: 2em;
+        text-align: center;
+        h3 {
+            color: $color_white;
+            font-family: $fontFam_title;
+            margin-bottom: 2em;
+        }
+        form {
+            input {
+                @include btn;
+            }
+        }
+    }
+}
+
+
+// END MAIN............................................
+
+
+// FOOTER***********************************************
+// FOOTER***********************************************
+// FOOTER***********************************************
+
+body {
+    .footer {
+        .footer_navbar {
+            width: 100%;
+            padding: 0.5em 0;
+
+            .footer_navbar_list {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+
+                a {
+                    text-align: center;
+                    color: $color_white;
+                    img{
+                        width: 70%;
+                    }
+                }
+            }
+        }
+    }
+}
+// END FOOTER............................................
+
+
+// RESPONSIVE............................................
+// RESPONSIVE............................................
+// RESPONSIVE............................................
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+// forms style
+
+    body {
+        .main_content {
+            .form_div {
+                width: 50%;
+                margin: 2em auto;
+            }
+        }
+    }
+
+
+// song page
+
+    body {
+        .main_content {
+            form {
+                .track {
+                    input {
+                        width: fit-content;
+                    }
+                    audio {
+                        width: 400px;
+                        
+                    }
+                }
+            }
+        }
+    }
+
+
+//settings page
+
+    body {
+        .main_content {
+            .user {
+                .edit_user {
+                    width: fit-content;
+                    margin: auto;
+                }
+                .change_password {
+                    .change_pwd_form {
+                        div {
+                            #new_pwd {
+                                width: 20%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@media screen and (min-width: 1024px) {
+
+// navbar
+
+    body {
+        .header {
+            .navbar {
+                .navbar_list {
+                    overflow: visible;
+                    flex-direction: row;
+                    justify-content: flex-end;
+                    width: 70%;
+                    position: static;
+                    box-shadow: none;
+                    margin: 0;
+                    a {
+                        li {
+                            box-shadow: none;
+                            margin: 0;
+                            margin-right: 4em;
+                            text-align: center;
+                            padding: 0;
+                        }
+                    }
+                }
+            }
+                .navbar_burger {
+                    display: none;
+                }
+            }
+        }
+
+    
+
+
+// forms style
+    
+        body {
+            .main_content {
+                .form_div {
+                    width: 50%;
+                    margin: 2em auto;
+                }
+            }
+        }
+    
+// home & about pages
+
+.main_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    .main_content_article {
+        width: 60%;
+        align-items: center;
+    }
+}
+
+// song page
+
+    body {
+        .main_content {
+            form {
+                .track {
+                    input {
+                        width: fit-content;
+                        margin: 0 1em;
+                    }
+                    audio {
+                        width: 400px;
+                    }
+                }
+            }
+        }
+    }
+
+
+//settings page
+
+    body {
+        .main_content {
+            .user {
+                .edit_user {
+                    width: fit-content;
+                    margin: auto;
+                }
+                .change_password {
+                    .change_pwd_form {
+                        div {
+                            #new_pwd {
+                                width: 20%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+}
